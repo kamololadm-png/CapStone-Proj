@@ -1,0 +1,61 @@
+.location-listings {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.location-listing-card {
+  display: flex;
+  gap: 20px;
+  padding: 16px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  transition: box-shadow 0.2s;
+}
+
+.location-listing-card:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.location-listing-card img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background-color: var(--color-light-gray);
+}
+
+.location-listing-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.location-listing-details h3 {
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--color-gray);
+  letter-spacing: 0.5px;
+}
+
+.location-listing-details p:nth-child(2) {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-black);
+}
+
+.location-listing-details p {
+  font-size: 14px;
+  color: var(--color-dark-gray);
+}
+
+.location-listing-details p:last-child {
+  margin-top: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--color-black);
+}
