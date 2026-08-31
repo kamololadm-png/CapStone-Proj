@@ -1,3 +1,4 @@
+import "./Inspiration.css";
 const locations = [
   { name: "New York", image: "/images/new-york.jpg" },
   { name: "Paris", image: "/images/paris.jpg" },
