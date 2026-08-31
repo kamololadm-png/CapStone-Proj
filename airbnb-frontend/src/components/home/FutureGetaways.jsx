@@ -1,3 +1,4 @@
+import "./FutureGetaways.css";
 import { useState } from "react";
 
 const tabs = ["Weekend trips", "Getaways", "Unique stays"];
