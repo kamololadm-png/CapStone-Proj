@@ -1,3 +1,4 @@
+import "./ShopAirbnb.css";
 const ShopAirbnb = () => {
   return (
     <section className="shop-airbnb">
