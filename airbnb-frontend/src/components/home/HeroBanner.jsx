@@ -1,3 +1,4 @@
+import "./HeroBanner.css";
 const HeroBanner = () => {
   return (
     <section className="hero-banner">
