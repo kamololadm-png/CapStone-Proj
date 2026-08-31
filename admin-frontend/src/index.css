@@ -1,0 +1,58 @@
+:root {
+  --color-primary: #FF385C;
+  --color-primary-dark: #E31C5F;
+  --color-black: #222222;
+  --color-dark-gray: #484848;
+  --color-gray: #717171;
+  --color-light-gray: #EBEBEB;
+  --color-border: #DDDDDD;
+  --color-bg: #FFFFFF;
+  --color-bg-soft: #F7F7F7;
+  --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 12px;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-black);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.page-container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
