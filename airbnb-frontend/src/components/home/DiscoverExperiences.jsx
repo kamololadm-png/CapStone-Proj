@@ -1,3 +1,4 @@
+import "./DiscoverExperiences.css";
 const DiscoverExperiences = () => {
   return (
     <section className="discover-experiences">
