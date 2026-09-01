@@ -1,9 +1,9 @@
 import "./Inspiration.css";
 const locations = [
-  { name: "New York", image: "/images/new-york.jpg" },
-  { name: "Paris", image: "/images/paris.jpg" },
-  { name: "Tokyo", image: "/images/tokyo.jpg" },
-  { name: "Cape Town", image: "/images/cape-town.jpg" },
+  { name: "New York", image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=400&q=80" },
+  { name: "Paris", image: "https://images.unsplash.com/photo-1502602898ظف657-3e91760cbb34?w=400&q=80" },
+  { name: "Tokyo", image: "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400&q=80" },
+  { name: "Cape Town", image: "https://images.unsplash.com/photo-1580060839134-75a50c3f7a37?w=400&q=80" },
 ];
 
 const Inspiration = () => {
