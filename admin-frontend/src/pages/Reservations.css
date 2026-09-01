@@ -1,0 +1,32 @@
+.reservations-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.reservations-table th,
+.reservations-table td {
+  text-align: left;
+  padding: 14px 16px;
+  font-size: 14px;
+}
+
+.reservations-table th {
+  background-color: var(--color-bg-soft);
+  font-weight: 700;
+  color: var(--color-dark-gray);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.reservations-table tbody tr {
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.reservations-table tbody tr:hover {
+  background-color: var(--color-bg-soft);
+}
