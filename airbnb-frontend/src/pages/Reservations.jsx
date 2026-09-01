@@ -10,10 +10,10 @@ const Reservations = () => {
   useEffect(() => {
     const fetchReservations = async () => {
       try {
-        const response = await api.get("/reservations/user");
+        const response = await api.get("/reservations/host");
         setReservations(response.data);
       } catch (err) {
-        setError("Failed to load your reservations.");
+        setError("Failed to load reservations.");
       } finally {
         setLoading(false);
       }
@@ -22,19 +22,7 @@ const Reservations = () => {
     fetchReservations();
   }, []);
 
-  const handleCancel = async (id) => {
-    const confirmed = window.confirm("Cancel this reservation?");
-    if (!confirmed) return;
-
-    try {
-      await api.delete(`/reservations/${id}`);
-      setReservations((prev) => prev.filter((r) => r._id !== id));
-    } catch (err) {
-      alert(err.response?.data?.message || "Failed to cancel reservation.");
-    }
-  };
-
-  if (loading) return <p className="page-container">Loading your reservations...</p>;
+  if (loading) return <p className="page-container">Loading reservations...</p>;
   if (error) return <p className="page-container error-message">{error}</p>;
 
   return (
@@ -42,27 +30,32 @@ const Reservations = () => {
       <h1>My Reservations</h1>
 
       {reservations.length === 0 ? (
-        <p>You have no reservations yet.</p>
+        <p>No reservations on your listings yet.</p>
       ) : (
-        <div className="reservations-list">
-          {reservations.map((res) => (
-            <div key={res._id} className="reservation-card">
-              {res.accommodation?.images?.[0] && (
-                <img src={res.accommodation.images[0]} alt={res.accommodation.title} />
-              )}
-              <div className="reservation-details">
-                <h3>{res.accommodation?.title}</h3>
-                <p>{res.accommodation?.location}</p>
-                <p>
-                  {new Date(res.checkIn).toLocaleDateString()} — {new Date(res.checkOut).toLocaleDateString()}
-                </p>
-                <p>{res.guests} guests</p>
-                <p className="reservation-total">R{res.totalCost.toFixed(2)} total</p>
-              </div>
-              <button onClick={() => handleCancel(res._id)}>Cancel</button>
-            </div>
-          ))}
-        </div>
+        <table className="reservations-table">
+          <thead>
+            <tr>
+              <th>Guest</th>
+              <th>Property</th>
+              <th>Check-in</th>
+              <th>Check-out</th>
+              <th>Guests</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {reservations.map((res) => (
+              <tr key={res._id}>
+                <td>{res.user?.username}</td>
+                <td>{res.accommodation?.title}</td>
+                <td>{new Date(res.checkIn).toLocaleDateString()}</td>
+                <td>{new Date(res.checkOut).toLocaleDateString()}</td>
+                <td>{res.guests}</td>
+                <td>R{res.totalCost.toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </div>
   );
