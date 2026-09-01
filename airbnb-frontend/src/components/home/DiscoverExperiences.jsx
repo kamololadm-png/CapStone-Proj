@@ -8,7 +8,7 @@ const DiscoverExperiences = () => {
           <h3>Things to do on your trip</h3>
           <button>Explore experiences</button>
         </div>
-        <div className="experience-card" style={{ backgroundImage: "url(/images/things-to-do-home.jpg)" }}>
+        <div className="experience-card" style={{ backgroundImage: "url(https://images.unsplash.com/photo-1758273238903-b5ca5f9988d1?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dGhpbmdzJTIwdG8lMjBkbyUyMGF0JTIwaG9tZXxlbnwwfHwwfHx8MA%3D%3D)" }}>
           <h3>Things to do at home</h3>
           <button>Explore online experiences</button>
         </div>
