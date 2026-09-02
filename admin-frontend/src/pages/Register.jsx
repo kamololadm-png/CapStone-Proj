@@ -1,3 +1,17 @@
+/**
+ * Register.jsx  (Admin Frontend)
+ *
+ * Registration page for new host or guest accounts.
+ *
+ * Defaults the role select to "host" since this is the admin dashboard —
+ * most users registering here intend to manage listings.
+ *
+ * Validation:
+ *  - All fields (username, email, password) must be filled
+ *  - Password must be at least 6 characters
+ *
+ * On success: logs the user in and redirects to the dashboard.
+ */
 import "./Login.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";

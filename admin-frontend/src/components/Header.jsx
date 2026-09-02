@@ -1,13 +1,33 @@
+/**
+ * Header.jsx  (Admin Frontend)
+ *
+ * Persistent top navigation bar rendered on every page.
+ *
+ * Logged-out state:
+ *  - Logo  → home
+ *  - "Become a host" link → /login
+ *
+ * Logged-in state:
+ *  - Logo  → home
+ *  - "Listings" nav link → /
+ *  - "Create Listing" nav link → /create
+ *  - "Hi, {username}" button → toggles dropdown
+ *    Dropdown: "View Reservations" | "Log Out"
+ */
 import "./Header.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 
 const Header = () => {
+  // Pull current user and logout helper from global auth context
   const { user, logout } = useAuth();
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const navigate = useNavigate();
 
+  /**
+   * Log the user out, close the dropdown, and redirect to the login page.
+   */
   const handleLogout = () => {
     logout();
     setDropdownOpen(false);

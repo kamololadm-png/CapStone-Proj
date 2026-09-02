@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import LocationPage from "./pages/LocationPage";
 import LocationDetails from "./pages/LocationDetails";
 import Login from "./pages/Login";
-import Register from "./pages/Login";
+import Register from "./pages/Register";
 import Reservations from "./pages/Reservations";
 import ProtectedRoute from "./components/ProtectedRoute";
 

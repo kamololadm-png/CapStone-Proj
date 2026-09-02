@@ -17,6 +17,9 @@
 }
 
 .location-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
   border-radius: var(--radius);
   overflow: hidden;
   cursor: pointer;

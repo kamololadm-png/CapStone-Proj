@@ -1,62 +1,47 @@
-.reservations-list {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+.reservations-table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 24px;
-}
-
-.reservation-card {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 16px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
+  overflow: hidden;
 }
 
-.reservation-card img {
-  width: 120px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 8px;
-  flex-shrink: 0;
-  background-color: var(--color-light-gray);
-}
-
-.reservation-details {
-  flex: 1;
-}
-
-.reservation-details h3 {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.reservation-details p {
+.reservations-table th,
+.reservations-table td {
+  text-align: left;
+  padding: 14px 16px;
   font-size: 14px;
-  color: var(--color-dark-gray);
-  margin-bottom: 2px;
 }
 
-.reservation-total {
+.reservations-table th {
+  background-color: var(--color-bg-soft);
   font-weight: 700;
-  color: var(--color-black);
-  margin-top: 6px;
+  color: var(--color-dark-gray);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.reservation-card button {
+.reservations-table tbody tr {
+  border-top: 1px solid var(--color-light-gray);
+}
+
+.reservations-table tbody tr:hover {
+  background-color: var(--color-bg-soft);
+}
+
+.cancel-btn {
   background-color: white;
   color: var(--color-primary);
   border: 1px solid var(--color-primary);
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: 8px;
   font-weight: 600;
   font-size: 13px;
-  flex-shrink: 0;
   transition: background-color 0.2s;
 }
 
-.reservation-card button:hover {
-  background-color: #FFF0F0;
+.cancel-btn:hover {
+  background-color: #fff0f0;
 }

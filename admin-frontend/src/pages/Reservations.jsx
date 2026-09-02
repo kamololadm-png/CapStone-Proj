@@ -1,3 +1,12 @@
+/**
+ * Reservations.jsx  (Admin Frontend)
+ *
+ * Displays all reservations made on the currently logged-in host's listings.
+ * Data is fetched from GET /api/reservations/host which returns only
+ * reservations where the host field matches the authenticated user's ID.
+ *
+ * Columns: Guest · Property · Check-in · Check-out · Guests · Total
+ */
 import "./Reservations.css";
 import { useState, useEffect } from "react";
 import api from "../api/axios";

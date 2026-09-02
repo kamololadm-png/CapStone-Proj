@@ -1,3 +1,19 @@
+/**
+ * CreateListing.jsx
+ *
+ * Form page for creating a new accommodation listing.
+ *
+ * All 14 required fields from the data model are included:
+ *  title, description, type, location, guests, bedrooms, bathrooms, price,
+ *  amenities, images, weeklyDiscount, cleaningFee, serviceFee, occupancyTaxes
+ *
+ * Before submitting:
+ *  - The 8 required fields are validated on the client side
+ *  - Comma-separated string inputs (amenities, images) are split into arrays
+ *  - Numeric string inputs are coerced to Number
+ *
+ * On success → navigates back to the listings dashboard (/).
+ */
 import "./CreateListing.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -24,10 +40,21 @@ const CreateListing = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  /**
+   * Generic change handler for all form inputs.
+   * Spreads the previous state and updates only the changed field.
+   */
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  /**
+   * Handle form submission:
+   *  1. Validate required fields
+   *  2. Transform string inputs into their correct types (arrays, numbers)
+   *  3. POST to the API
+   *  4. Navigate to the dashboard on success
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");

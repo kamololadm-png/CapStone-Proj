@@ -3,12 +3,26 @@ import { useState } from "react";
 
 const tabs = ["Weekend trips", "Getaways", "Unique stays"];
 
-const listItems = [
-  "Cabins in the mountains",
-  "Beachfront villas",
-  "City apartments",
-  "Countryside cottages",
-];
+const tabContent = {
+  0: [
+    "Cabins in the mountains",
+    "Beachfront villas",
+    "City apartments",
+    "Countryside cottages",
+  ],
+  1: [
+    "Wine country retreats",
+    "Lake house escapes",
+    "Desert oasis stays",
+    "Forest hideaways",
+  ],
+  2: [
+    "Treehouses",
+    "Converted barns",
+    "Houseboats",
+    "Historic castles",
+  ],
+};
 
 const FutureGetaways = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -30,14 +44,11 @@ const FutureGetaways = () => {
       </div>
 
       <div className="tab-content">
-        {activeTab === 0 && (
-          <ul>
-            {listItems.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        )}
-        {activeTab !== 0 && <p>Explore {tabs[activeTab]} coming soon.</p>}
+        <ul>
+          {tabContent[activeTab].map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
       </div>
     </section>
   );

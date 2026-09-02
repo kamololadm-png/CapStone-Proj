@@ -1,4 +1,6 @@
 import "./Inspiration.css";
+import { Link } from "react-router-dom";
+
 const locations = [
   { name: "New York", image: "https://images.unsplash.com/photo-1541336032412-2048a678540d?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3JTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D" },
   { name: "Paris", image: "https://plus.unsplash.com/premium_photo-1661919210043-fd847a58522d?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cGFyaXN8ZW58MHx8MHx8fDA%3D" },
@@ -12,10 +14,10 @@ const Inspiration = () => {
       <h2>Inspiration for your next trip</h2>
       <div className="location-cards">
         {locations.map((loc) => (
-          <div key={loc.name} className="location-card">
+          <Link key={loc.name} to={`/locations/${loc.name}`} className="location-card">
             <img src={loc.image} alt={loc.name} />
             <p>{loc.name}</p>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

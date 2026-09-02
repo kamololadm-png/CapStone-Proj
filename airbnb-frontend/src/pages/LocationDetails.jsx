@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import api from "../api/axios";
 import { useAuth } from "../context/AuthContext";
+import Footer from "../components/home/Footer";
 
 const LocationDetails = () => {
   const { id } = useParams();
@@ -81,7 +82,6 @@ const LocationDetails = () => {
         checkIn,
         checkOut,
         guests: Number(guests),
-        totalCost,
       });
       setBookingSuccess("Reservation created successfully!");
     } catch (err) {
@@ -134,6 +134,14 @@ const LocationDetails = () => {
                 <li key={amenity}>{amenity}</li>
               ))}
             </ul>
+          </section>
+
+          <section>
+            <h2>7 nights in {listing.location}</h2>
+            <p>
+              Enjoy a week-long stay in {listing.location}. Explore local attractions, relax in
+              comfort, and experience everything this destination has to offer.
+            </p>
           </section>
 
           <section>
@@ -202,6 +210,8 @@ const LocationDetails = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

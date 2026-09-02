@@ -1,3 +1,14 @@
+/**
+ * Login.jsx  (Admin Frontend)
+ *
+ * Login page for admin/host users.
+ *
+ * - Validates that both email and password fields are filled before
+ *   submitting to avoid unnecessary API calls.
+ * - On success: stores the JWT via AuthContext and redirects to the
+ *   listings dashboard (/).
+ * - On failure: surfaces the API error message (or a generic fallback).
+ */
 import "./Login.css";
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
@@ -13,6 +24,13 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
 
+  /**
+   * Handle form submission.
+   *  1. Client-side validation (empty field check)
+   *  2. POST credentials to /api/users/login
+   *  3. Persist the returned token and user via AuthContext.login()
+   *  4. Redirect to the dashboard
+   */
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
