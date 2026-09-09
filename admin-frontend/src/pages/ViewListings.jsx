@@ -46,17 +46,17 @@ const ViewListings = () => {
     setLoading(true);
     setError("");
     try {
-      
+      // The API returns { accommodations, page, totalPages, total }
       const response = await api.get("/accommodations");
-      setListings(response.data.accommodations);
-      // The API now returns { accommodations, page, totalPages, total }
       const all = response.data.accommodations ?? response.data;
 
-      // Filter to only this host's listings
-      const mine = all.filter(
-        (listing) =>
-          String(listing.host?._id || listing.host) === String(user._id)
-      );
+      // Filter to only this host's listings (only when user is available)
+      const mine = user
+        ? all.filter(
+            (listing) =>
+              String(listing.host?._id || listing.host) === String(user._id)
+          )
+        : all;
 
       setListings(mine);
     } catch (err) {
