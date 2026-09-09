@@ -46,7 +46,9 @@ const ViewListings = () => {
     setLoading(true);
     setError("");
     try {
+      
       const response = await api.get("/accommodations");
+      setListings(response.data.accommodations);
       // The API now returns { accommodations, page, totalPages, total }
       const all = response.data.accommodations ?? response.data;
 
