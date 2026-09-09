@@ -46,8 +46,9 @@ const LocationPage = () => {
 
       try {
         // Use the server-side location filter for efficiency
-        const response = await api.get("/accommodations");
-const filtered = response.data.accommodations.filter((listing) => listing.location === locationName); 
+        const response = await api.get("/accommodations", {
+          params: { location: locationName, limit: 50 },
+        });
 
         // The API returns { accommodations, page, totalPages, total }
         const data = response.data.accommodations ?? response.data;
