@@ -22,12 +22,12 @@ const locations = [
   {
     name: "KwaZulu-Natal",
     image:
-      "https://plus.unsplash.com/premium_photo-1661919210043-fd847a58522d?w=700&auto=format&fit=crop&q=60",
+      "https://images.unsplash.com/photo-1515898698999-18f625d67499?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8a3dhenVsdSUyMG5hdGFsfGVufDB8fDB8fHww",
   },
   {
     name: "Johannesburg",
     image:
-      "https://plus.unsplash.com/premium_photo-1661914240950-b0124f20a5c1?w=700&auto=format&fit=crop&q=60",
+      "https://plus.unsplash.com/premium_photo-1742418150348-371701631845?w=300&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8am9oYW5uZXNidXJnfGVufDB8fDB8fHww",
   },
   {
     name: "Cape Town",
