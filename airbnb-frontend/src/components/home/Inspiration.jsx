@@ -20,12 +20,12 @@ const locations = [
       "https://images.unsplash.com/photo-1541336032412-2048a678540d?w=700&auto=format&fit=crop&q=60",
   },
   {
-    name: "Paris",
+    name: "KwaZulu-Natal",
     image:
       "https://plus.unsplash.com/premium_photo-1661919210043-fd847a58522d?w=700&auto=format&fit=crop&q=60",
   },
   {
-    name: "Tokyo",
+    name: "Johannesburg",
     image:
       "https://plus.unsplash.com/premium_photo-1661914240950-b0124f20a5c1?w=700&auto=format&fit=crop&q=60",
   },
