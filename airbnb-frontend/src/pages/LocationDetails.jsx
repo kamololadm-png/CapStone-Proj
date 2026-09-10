@@ -247,7 +247,7 @@ const LocationDetails = () => {
           {/* Host information */}
           <section>
             <h2>Host Details</h2>
-            <p>Hosted by {listing.host?.username}</p>
+            <p>Hosted by {listing.host?.username ?? "Unknown host"}</p>
           </section>
 
           {/* House rules & policies */}

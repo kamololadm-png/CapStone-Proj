@@ -27,7 +27,7 @@ const ViewListings = () => {
   const [searchText, setSearchText] = useState("");
   const [filterType, setFilterType] = useState("");
 
-  const { user } = useAuth();
+  const { user, loading: authLoading } = useAuth();
   const navigate = useNavigate();
 
   // ---------------------------------------------------------------------------
@@ -35,8 +35,11 @@ const ViewListings = () => {
   // ---------------------------------------------------------------------------
 
   useEffect(() => {
-    fetchListings();
-  }, []);
+    // Wait for auth to finish rehydrating before fetching
+    if (!authLoading) {
+      fetchListings();
+    }
+  }, [user, authLoading]);
 
   /**
    * Fetch all accommodations from the API, then keep only the ones
@@ -46,19 +49,15 @@ const ViewListings = () => {
     setLoading(true);
     setError("");
     try {
+      // Pass hostId to filter server-side — avoids pagination truncation issues
+      const response = await api.get("/accommodations", {
+        params: { hostId: user?._id, limit: 50 },
+      });
+
       // The API returns { accommodations, page, totalPages, total }
-      const response = await api.get("/accommodations");
-      const all = response.data.accommodations ?? response.data;
+      const all = response.data.accommodations ?? (Array.isArray(response.data) ? response.data : []);
 
-      // Filter to only this host's listings (only when user is available)
-      const mine = user
-        ? all.filter(
-            (listing) =>
-              String(listing.host?._id || listing.host) === String(user._id)
-          )
-        : all;
-
-      setListings(mine);
+      setListings(all);
     } catch (err) {
       setError("Failed to load listings. Please try again.");
     } finally {

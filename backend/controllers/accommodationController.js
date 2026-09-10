@@ -108,10 +108,15 @@ export const createAccommodation = async (req, res, next) => {
  */
 export const getAccommodations = async (req, res, next) => {
   try {
-    const { location, type, minPrice, maxPrice, page = 1, limit = 12 } = req.query;
+    const { location, type, minPrice, maxPrice, hostId, page = 1, limit = 12 } = req.query;
 
     // Build a dynamic Mongoose filter object from the query params
     const filter = {};
+
+    if (hostId) {
+      // Filter to a specific host's listings (used by the admin dashboard)
+      filter.host = hostId;
+    }
 
     if (location) {
       // Case-insensitive partial match on the location field

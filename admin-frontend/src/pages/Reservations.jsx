@@ -20,7 +20,7 @@ const Reservations = () => {
     const fetchReservations = async () => {
       try {
         const response = await api.get("/reservations/host");
-        setReservations(response.data);
+        setReservations(Array.isArray(response.data) ? response.data : []);
       } catch (err) {
         setError("Failed to load reservations.");
       } finally {
@@ -60,7 +60,7 @@ const Reservations = () => {
                 <td>{new Date(res.checkIn).toLocaleDateString()}</td>
                 <td>{new Date(res.checkOut).toLocaleDateString()}</td>
                 <td>{res.guests}</td>
-                <td>R{res.totalCost.toFixed(2)}</td>
+                <td>R{(res.totalCost ?? 0).toFixed(2)}</td>
               </tr>
             ))}
           </tbody>

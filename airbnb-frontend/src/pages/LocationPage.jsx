@@ -51,7 +51,7 @@ const LocationPage = () => {
         });
 
         // The API returns { accommodations, page, totalPages, total }
-        const data = response.data.accommodations ?? response.data;
+        const data = response.data.accommodations ?? (Array.isArray(response.data) ? response.data : []);
         setListings(data);
       } catch (err) {
         setError("Failed to load listings. Please try again.");
