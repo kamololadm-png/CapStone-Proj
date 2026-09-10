@@ -45,9 +45,9 @@ const LocationPage = () => {
       setMaxPrice("");
 
       try {
-        // Use the server-side location filter for efficiency
+        // Skip location filter when showing all listings
         const response = await api.get("/accommodations", {
-          params: { location: locationName, limit: 50 },
+          params: { ...(locationName !== "all" && { location: locationName }), limit: 50 },
         });
 
         // The API returns { accommodations, page, totalPages, total }
@@ -106,8 +106,8 @@ const LocationPage = () => {
     <div className="page-container">
       {/* Page heading: shows total count for the location */}
       <h1>
-        {listings.length} accommodation{listings.length !== 1 ? "s" : ""} in{" "}
-        {locationName}
+        {listings.length} accommodation{listings.length !== 1 ? "s" : ""}{" "}
+        {locationName !== "all" ? `in ${locationName}` : "available"}
       </h1>
 
       {listings.length === 0 ? (
