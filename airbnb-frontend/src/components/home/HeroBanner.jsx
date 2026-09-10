@@ -20,7 +20,7 @@ const HeroBanner = () => {
       {/* CTA: navigate to a default location search */}
       <button
         type="button"
-        onClick={() => navigate("/locations/all")}
+        onClick={() => navigate("/locations/Cape Town")}
         aria-label="Explore stays nearby in Cape Town"
       >
         Explore Stays Nearby
