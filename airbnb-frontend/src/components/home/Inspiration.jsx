@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 /** Static list of featured destinations shown on the home page */
 const locations = [
   {
-    name: "New York",
+    name: "North West",
     image:
       "https://images.unsplash.com/photo-1541336032412-2048a678540d?w=700&auto=format&fit=crop&q=60",
   },
