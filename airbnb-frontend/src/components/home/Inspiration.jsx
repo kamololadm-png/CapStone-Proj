@@ -17,7 +17,7 @@ const locations = [
   {
     name: "North West",
     image:
-      "https://lh3.googleusercontent.com/grass-cs/ACvplmNc-mIv67ew09R4VhfS7dk_0PWiSERwPYYXF2URnmeba70hCAffA2fuWwWLvQW2nl2-mjbPJda8OHApTgkijMWiIUx7U1iU40ijtLHx2sq86zR16HYxuRHkJtW016Oqg4u2MSs6oA=w326-h312-n-k-no",
+      "https://lh3.googleusercontent.com/gps-cs-s/AHRPTWkK6XxZs9yeSTTF7QK2RAUHkPsHV8KNG5x2s90ocfZ_fsdP7mxI1KE0ANLnXYbb0ZVvUOylzIu5aEQasck84er5xmCVbvT2lE9dfL4rOPY8GtV0YNiYkdJ-nBkA7ydtEHrjbcCzDg=s680-w680-h510-rw",
   },
   {
     name: "KwaZulu-Natal",
